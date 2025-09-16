@@ -1,0 +1,267 @@
+/*
+  All styles derived from the provided JSX components.
+  This covers base styles, variants, and dynamic classes.
+*/
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.25rem;
+}
+
+.badge-default {
+  background-color: #e5e7eb; /* bg-gray-200 */
+  color: #4b5563; /* text-gray-800 */
+}
+
+.badge-success {
+  background-color: #d1fae5; /* bg-green-100 */
+  color: #065f46; /* text-green-700 */
+}
+
+.badge-error {
+  background-color: #fee2e2; /* bg-red-100 */
+  color: #991b1b; /* text-red-700 */
+}
+
+.badge-warning {
+  background-color: #fffbeb; /* bg-yellow-100 */
+  color: #92400e; /* text-yellow-700 */
+}
+
+.badge-outline {
+  border: 1px solid #9ca3af; /* border border-gray-400 */
+  color: #374151; /* text-gray-700 */
+}
+
+/* Button */
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.btn-primary {
+  background-color: #2563eb; /* bg-blue-600 */
+  color: #fff; /* text-white */
+}
+.btn-primary:hover {
+  background-color: #1d4ed8; /* hover:bg-blue-700 */
+}
+
+.btn-success {
+  background-color: #16a34a; /* bg-green-600 */
+  color: #fff; /* text-white */
+}
+.btn-success:hover {
+  background-color: #15803d; /* hover:bg-green-700 */
+}
+
+.btn-danger {
+  background-color: #dc2626; /* bg-red-600 */
+  color: #fff; /* text-white */
+}
+.btn-danger:hover {
+  background-color: #b91c1c; /* hover:bg-red-700 */
+}
+
+.btn-outline {
+  border: 1px solid #9ca3af; /* border border-gray-400 */
+  color: #4b5563; /* text-gray-700 */
+}
+.btn-outline:hover {
+  background-color: #f3f4f6; /* hover:bg-gray-100 */
+}
+
+/* Card */
+.card-wrapper {
+  background-color: #fff; /* bg-white */
+  color: #111827; /* text-gray-900 */
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.75rem; /* rounded-xl */
+  border: 1px solid #e5e7eb; /* border */
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow-md */
+}
+
+.card-header {
+  padding: 1.5rem 1.5rem 0; /* px-6 pt-6 */
+}
+
+.card-title {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600; /* font-semibold */
+  line-height: 1.5rem; /* leading-none */
+}
+
+.card-description {
+  color: #4b5563; /* text-gray-600 */
+  font-size: 0.875rem; /* text-sm */
+  margin-top: 0.25rem; /* mt-1 */
+}
+
+.card-content {
+  padding: 1rem 1.5rem; /* px-6 py-4 */
+}
+
+.card-footer {
+  padding: 0 1.5rem 1.5rem; /* px-6 pb-6 */
+  display: flex;
+  align-items: center;
+}
+
+/* Checkbox */
+.checkbox-label-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.checkbox-input {
+  width: 1rem;
+  height: 1rem;
+  border-color: #d1d5db; /* border-gray-300 */
+  border-radius: 0.25rem;
+  accent-color: #2563eb; /* accent-blue-600 */
+}
+
+/* Input */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.input-label {
+  margin-bottom: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.input-field {
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.input-field:focus {
+  outline: 2px solid #3b82f6; /* focus:ring-2 focus:ring-blue-500 */
+  border-color: #3b82f6; /* focus:border-blue-500 */
+}
+
+/* Label */
+.label-block {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+/* Select */
+.select-container {
+  position: relative;
+  width: 100%;
+}
+
+.select-button {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+.select-dropdown {
+  position: absolute;
+  margin-top: 0.25rem;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  z-index: 10;
+}
+
+.select-item {
+  padding: 0.5rem 0.75rem;
+  cursor: pointer;
+}
+
+.select-item:hover {
+  background-color: #f3f4f6;
+}
+
+/* Separator */
+.separator {
+  border-top: 1px solid #d1d5db;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Switch */
+.switch-button {
+  position: relative;
+  display: inline-flex;
+  height: 1.5rem;
+  width: 2.75rem;
+  align-items: center;
+  border-radius: 9999px;
+  transition-property: background-color;
+  transition-duration: 150ms;
+}
+
+.switch-button-on {
+  background-color: #2563eb;
+}
+
+.switch-button-off {
+  background-color: #d1d5db;
+}
+
+.switch-circle {
+  display: inline-block;
+  height: 1rem;
+  width: 1rem;
+  transform: translateX(0.25rem);
+  border-radius: 9999px;
+  background-color: #fff;
+  transition-property: transform;
+  transition-duration: 150ms;
+}
+
+.switch-circle-on {
+  transform: translateX(1.5rem);
+}
+
+/* Textarea */
+.textarea-field {
+  width: 100%;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.textarea-field:focus {
+  outline: 2px solid #3b82f6; /* focus:ring-2 focus:ring-blue-500 */
+  border-color: #3b82f6; /* focus:border-blue-500 */
+}

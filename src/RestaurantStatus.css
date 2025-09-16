@@ -1,0 +1,114 @@
+/* src/RestaurantStatus.css */
+.status-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: #f0f2f5;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.status-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.status-card h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.status-card p {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 25px;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+/* Status-specific styles */
+.status-card.pending {
+  border-top: 5px solid #ffc107;
+}
+
+.pending-badge {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-card.approved {
+  border-top: 5px solid #28a745;
+}
+
+.approved-badge {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-card.rejected {
+  border-top: 5px solid #dc3545;
+}
+
+.rejected-badge {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.status-message.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Loading state */
+.loading-state {
+  flex-direction: column;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
