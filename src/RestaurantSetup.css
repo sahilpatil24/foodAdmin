@@ -1,0 +1,75 @@
+/* src/RestaurantSetup.css */
+.setup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.setup-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.setup-card h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.setup-card p {
+  font-size: 1rem;
+  color: #6c757d;
+  margin-bottom: 20px;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #f5c6cb;
+}
+
+.setup-card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.setup-card input {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.setup-card button {
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.setup-card button:hover {
+  background-color: #45a049;
+}
+
+.setup-card button:disabled {
+  background-color: #b0b0b0;
+  cursor: not-allowed;
+}

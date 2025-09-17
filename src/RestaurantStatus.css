@@ -20,6 +20,10 @@
   animation: fadeIn 0.5s ease-in-out;
 }
 
+.con {
+  margin-left: 100px;
+}
+
 .status-card h2 {
   font-size: 2rem;
   font-weight: 700;

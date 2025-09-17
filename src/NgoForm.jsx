@@ -1,12 +1,14 @@
 // src/NgoForm.js
 
 import React, { useState } from "react";
-import { collection, doc, setDoc } from "firebase/firestore"; // Import doc and setDoc
+
 import { db } from "./firebase"; // Make sure to import your Firebase db instance
 import { useNavigate } from "react-router-dom";
+import { collection, doc, setDoc, serverTimestamp } from "firebase/firestore";
 
 function NgoForm() {
   const [form, setForm] = useState({
+    ngoName: "", // New state field for the NGO's name
     registrationNumber: "",
     panNumber: "",
     socialLinks: "",
@@ -27,7 +29,7 @@ function NgoForm() {
       await setDoc(newDocRef, {
         ...form,
         uniqueId: newDocRef.id, // Add the uniqueId field with the document's auto-generated ID
-        submittedAt: new Date(),
+        submittedAt: serverTimestamp(), // Correctly saves a Timestamp object
         status: "Pending",
       });
 
@@ -36,6 +38,7 @@ function NgoForm() {
       navigate(`/ngo-status/${newDocRef.id}`);
       // Clear the form after submission
       setForm({
+        ngoName: "", // Clear the new field
         registrationNumber: "",
         panNumber: "",
         socialLinks: "",
@@ -51,6 +54,16 @@ function NgoForm() {
       <div style={cardStyle}>
         <h2 style={{ marginBottom: "20px" }}>🌍 NGO Verification</h2>
         <form onSubmit={handleSubmit} style={formStyle}>
+          {/* New input field for the NGO name */}
+          <label style={labelStyle}>NGO Name</label>
+          <input
+            type="text"
+            name="ngoName"
+            placeholder="Enter NGO Name"
+            value={form.ngoName}
+            onChange={handleChange}
+            style={inputStyle}
+          />
           <label style={labelStyle}>NGO Registration Number</label>
           <input
             type="text"

@@ -9,7 +9,7 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { db } from "./firebase"; // Import your initialized Firestore db instance
-``;
+
 function NgoRequests() {
   const [ngoRequests, setNgoRequests] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -102,6 +102,7 @@ function NgoRequests() {
           <thead>
             <tr>
               <th>Unique ID</th>
+              <th>NGO Name</th> {/* Added this new header */}
               <th>Registration Number</th>
               <th>PAN Number</th>
               <th>Social Links</th>
@@ -114,6 +115,7 @@ function NgoRequests() {
             {ngoRequests.map((req) => (
               <tr key={req.id}>
                 <td>{req.uniqueId || req.id}</td>
+                <td>{req.ngoName || "N/A"}</td> {/* Added this new data cell */}
                 <td>{req.registrationNumber || "N/A"}</td>
                 <td>{req.panNumber || "N/A"}</td>
                 <td>{req.socialLinks || "N/A"}</td>

@@ -3,6 +3,7 @@ import { onSnapshot, doc } from "firebase/firestore";
 import { db } from "./firebase";
 import { useParams } from "react-router-dom";
 import "./RestaurantStatus.css";
+import RestaurantSetup from "./RestaurantSetup"; // Import the setup form
 
 function RestaurantStatus() {
   const { id } = useParams();
@@ -51,6 +52,10 @@ function RestaurantStatus() {
     );
   }
 
+  if (status === "Approved") {
+    return <RestaurantSetup restaurantId={id} />;
+  }
+
   return (
     <div className="status-container">
       {error && <div className="status-message error-message">{error}</div>}
@@ -64,16 +69,16 @@ function RestaurantStatus() {
         </div>
       )}
 
-      {status === "Approved" && (
+      {/* {status === "Approved" && (
         <div className="status-card approved">
-          <h2>Congratulations! 🎉</h2>
+           <h2>Congratulations! 🎉</h2>
           <p>
             Your restaurant is now officially verified. You can now access all
             features.
           </p>
-          <div className="status-badge approved-badge">Verified</div>
-        </div>
-      )}
+          <div className="status-badge approved-badge">Verified</div> 
+        </div>  
+      )} */}
 
       {status === "Rejected" && (
         <div className="status-card rejected">
